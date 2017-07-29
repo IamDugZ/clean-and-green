@@ -88,18 +88,6 @@ label-empty-foreground = ${colors.gray}
 label-empty-padding = 0
 
 ;
-; Cpu
-;
-
-[module/cpu]
-type = internal/cpu
-interval = 1
-format-prefix = "%{T3} %{T-}"
-format-prefix-foreground = ${colors.foreground}
-;format-underline = #ffffff
-label = %percentage%%
-
-;
 ; Network
 ;  
 
