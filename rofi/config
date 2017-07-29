@@ -1,6 +1,5 @@
-rofi.modi:                           window,drun,run
+rofi.modi: window,drun,run
 
-rofi.location: 0
 rofi.fullscreen: true
 rofi.padding: 370
 
@@ -13,7 +12,7 @@ rofi.bw: 0
 rofi.display-drun: run
 rofi.display-run: exec
 
-rofi.terminal: konsole
+rofi.terminal: urxvt
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
