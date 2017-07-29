@@ -105,20 +105,6 @@ format-disconnected = <label-disconnected>
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.white}
 
-[module/wireless]
-type = internal/network
-interface = enp3s0
-interval = 3.0
-
-format-connected = <label-connected>
-
-format-connected-foreground = ${colors.green}
-label-connected =""
-
-format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.white}
-
 ;
 ; DateTime
 ;                                                                               
