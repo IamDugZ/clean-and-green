@@ -18,10 +18,11 @@ for wid in $WINDOWS; do
 	wname="$(echo ${wname//\"})"
 
 	#Uppercase first character of window class
-	wname="$(tr '[:lower:]' '[:upper:]' <<< ${wname:0:1})${wname:1:10}"
+	wname="$(tr '[:lower:]' '[:upper:]' <<< ${wname:0:1})${wname:1}"
 	wclass="$(tr '[:lower:]' '[:upper:]' <<< ${wclass:0:1})${wclass:1}"
 
 	#If window is focused - highlight it with green color
+	#Use either $wmclass or $wmname to choose what to display
 	if [[ "$wid" = "$FOCUSED" ]]; then
 		win="$(printf "%s" "%{F#50fa7b} $wname%{F#ffffff}")"
 	else
