@@ -3,7 +3,7 @@ rofi.modi: window,drun,run
 rofi.fullscreen: true
 rofi.padding: 370
 
- rofi.font:	Roboto Light 24
+ rofi.font:	Iosevka 24
 
 rofi.separator-style: none
 rofi.hide-scrollbar: true
