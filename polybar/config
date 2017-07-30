@@ -35,7 +35,7 @@ border-color = ${colors.graphite}
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Iosevka:pixelsize=14;3
+font-0 = Iosevka:pixelsize=13;3
 font-1 = Iosevka:weight=bold:pixelsize=18;3
 font-2 = FontAwesome:pixelsize=16;3
 font-3 = Iosevka:pixelsize=20
@@ -44,10 +44,6 @@ modules-left = bspwm windowlist
 modules-right = xkeyboard wired volume date powermenu
 
 wm-restack = bspwm
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
 
 ;
 ; xkeyboard
@@ -156,28 +152,25 @@ label-separator = " : "
 format-foreground = ${colors.graphite}
 format-background = ${colors.green}
 
-format-padding = 00
-format-menu-background = ${colors.graphite}
-
-menu-0-0 = suspend
+menu-0-0 = 
 menu-0-0-exec = menu-open-1
-menu-0-1 = reboot
+menu-0-1 = 
 menu-0-1-exec = menu-open-2
-menu-0-2 = power off
+menu-0-2 = 
 menu-0-2-exec = menu-open-3
-menu-0-3 = "x  "
+menu-0-3 = "  "
 
-menu-1-0 = confirm suspend
+menu-1-0 = 
 menu-1-0-exec = systemctl suspend -i
-menu-1-1 = "x  "
+menu-1-1 = "  "
 
-menu-2-0 = confirm reboot
+menu-2-0 = 
 menu-2-0-exec = systemctl reboot -i
-menu-2-1 = "x  "
+menu-2-1 = ""
 
-menu-3-0 = confirm poweroff
+menu-3-0 = 
 menu-3-0-exec = systemctl poweroff -i
-menu-3-1 = "x  "
+menu-3-1 = ""
 
 ;
 ; Window-list
@@ -187,7 +180,8 @@ menu-3-1 = "x  "
 type = custom/script
 exec = $XDG_CONFIG_HOME/polybar/windowlist.sh
 
-interval = 0
+;zero interval causes high cpu load
+interval = 0.5
 
 scroll-up = bspc node -f prev.local
 scroll-down = bspc node -f next.local
