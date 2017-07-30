@@ -6,13 +6,23 @@ WINDOWS="$(bspc query -N -d focused -n .window.\!floating)"
 #Get id of currently focused window
 FOCUSED="$(bspc query -N -d focused -n .\focused.window.\!floating)"
 
+#Choose what format to use:
+#-Show short output if there are more than one window on desktop
+#-Show full output if there is only one window on desktop
+
+if [[  $(wc -l <<< $WINDOWS) = 1 ]]; then
+    FORMAT="-f3-"
+else
+    FORMAT="-f3"
+fi
+
 #Get WM_CLASS string from all IDs
 for wid in $WINDOWS; do
 	#Get window's class
 	wclass="$(< "/proc/${1:-$(xdotool getwindowpid $wid)}/comm")"
 
 	#Get window's name
-	wname="$(xprop -id $wid WM_NAME | cut -d " " -f3)"
+	wname="$(xprop -id $wid WM_NAME | cut -d " " $FORMAT)"
 
 	#Get rid of quotation marks
 	wname="$(echo ${wname//\"})"
